@@ -1,0 +1,68 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Teach Assist</title>
+</head>
+
+<body>
+  <div class="master">
+    <canvas id="background"></canvas>
+    {{> applicationLayout}}
+  </div>
+</body>
+
+
+<template name="applicationLayout">
+  {{> Template.dynamic template=main}}
+</template>
+
+<template name="hello">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+</template>
+
+<template name="info">
+  <h2>Learn Meteor!</h2>
+  <ul>
+    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
+    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
+    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
+    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
+  </ul>
+</template>
+
+<template name="login">
+  <div class="errorMessage" id="errorMessage">
+    <i class="fa fa-times-circle"></i>
+    Login Unsuccessful
+  </div>
+  <h1 class="main-title">Teach Assist App</h1>
+  <h5 class="moto-title">Developed by Students for Students</h5>
+  <h2 class="sub-title">Welcome!</h2>
+  <div class="container">
+    <form>
+      <div class="group">
+        <input type="text" id="username" required>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Student Number</label>
+      </div>
+      <div class="group">
+        <input type="password" id="password" required>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Password</label>
+      </div>
+    </form>
+  </div>
+	<button class="loginButton">
+    <p class="loginText">Login</p>
+  </button>
+</template>
+
+<template name="profile">
+  <h1 class="main-title" id="test">Profile</h1>
+  <p id="htmlCode"></p>
+  <button class="logoutButton">
+    <p class="logoutText">Logout</p>
+  </button>
+</template>

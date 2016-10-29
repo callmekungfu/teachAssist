@@ -1,0 +1,204 @@
+/* CSS declarations go here */
+/* Fonts */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,400italic);
+@import url('http://fonts.googleapis.com/css?family=Montserrat:700');
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
+
+/*Root Level Components*/
+body{
+    margin-top: 1%;
+    font-family: "Open Sans";
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+.container{
+    width:100%;
+    margin-top: 20px;
+    display:block;
+}
+.master{
+
+}
+/* Form Stylings*/
+form{
+    display: inline-block;
+    text-align: center;
+}
+.group{
+    position:relative;
+    margin-bottom:40px;
+}
+input{
+    font-size:18px;
+    padding:10px 10px 10px 5px;
+    display:block;
+    width:300px;
+    border:none;
+    border-bottom:1px solid #757575;
+}
+input:focus{
+    outline:none;
+}
+/* LABEL*/
+label{
+    color:#999;
+    font-size:18px;
+    font-weight:normal;
+    position:absolute;
+    pointer-events:none;
+    left:5px;
+    top:10px;
+    transition:0.2s ease all;
+    -moz-transition:0.2s ease all;
+    -webkit-transition:0.2s ease all;
+}
+
+/* label active state */
+input:focus ~ label, input:valid ~ label{
+    top:-20px;
+    font-size:14px;
+    color:#5264AE;
+}
+
+/* BOTTOM BARS */
+.bar {
+    position:relative;
+    display:block;
+    width:300px;
+}
+.bar:before, .bar:after {
+    content:'';
+    height:2px;
+    width:0;
+    bottom:1px;
+    position:absolute;
+    background:#5264AE;
+    transition:0.2s ease all;
+    -moz-transition:0.2s ease all;
+    -webkit-transition:0.2s ease all;
+}
+.bar:before {
+    left:50%;
+}
+.bar:after {
+    right:50%;
+}
+
+/* bar active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+    width:50%;
+}
+
+/* HIGHLIGHTER */
+.highlight {
+    position:absolute;
+    height:60%;
+    width:100px;
+    top:25%;
+    left:0;
+    pointer-events:none;
+    opacity:0.5;
+}
+
+/* highlight active state */
+input:focus ~ .highlight {
+    -webkit-animation:inputHighlighter 0.3s ease;
+    -moz-animation:inputHighlighter 0.3s ease;
+    animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS */
+@-webkit-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes effect{
+	100%{
+    opacity: 0;
+    transform: scale(2.5);
+  }
+}
+
+/* Text Components */
+.main-title{
+
+}
+.sub-title{
+  color: #999;
+  margin-bottom: 30px;
+}
+.moto-title{
+  margin-top: -20px;
+  color: #5d5c5c;
+}
+
+/* Login Button */
+
+.loginButton{
+  border: 3px solid #70fc83;
+  background: transparent;
+  overflow: hidden;
+  width:300px;
+  outline: none;
+}
+
+.loginText{
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.5em;
+  color: #70fc83;
+
+  display: block;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+  padding: 0px;
+
+}
+
+/* Login Button */
+
+.logoutButton{
+  border: 3px solid #fc7970;
+  background: transparent;
+  overflow: hidden;
+  width:300px;
+  outline: none;
+}
+
+.logoutText{
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.5em;
+  color: #fc7970;
+
+  display: block;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+  padding: 0px;
+
+}
+
+/* Error Message */
+.errorMessage {
+  padding: 10px;
+  width: 300px;
+  text-align: center;
+  border-radius: 3px 3px 3px 3px;
+  color: #D8000C;
+  background-color: #FFBABA;
+  margin-left:auto;
+  margin-right:auto;
+  opacity: 0;
+}
