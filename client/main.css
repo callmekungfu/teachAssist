@@ -162,6 +162,7 @@ input:focus ~ .highlight {
   position: relative;
   overflow: hidden;
   padding: 0px;
+  opacity: 1;
 
 }
 
@@ -192,7 +193,6 @@ input:focus ~ .highlight {
 
 /* Error Message */
 .errorMessage {
-  padding: 10px;
   width: 300px;
   text-align: center;
   border-radius: 3px 3px 3px 3px;
@@ -201,4 +201,127 @@ input:focus ~ .highlight {
   margin-left:auto;
   margin-right:auto;
   opacity: 0;
+  margin-bottom: 5px;
+}
+
+.errorText{
+  display: inline-block;
+}
+
+/* Loading Ball */
+
+.loadingBall {
+	width: 10px;
+	height: 10px;
+	margin: 10px auto;
+  margin-top: -10px;
+	border-radius: 50px;
+  background: #ffcc00;
+	-webkit-animation: left 3.15s infinite ease-in-out;
+	-moz-animation: left 3.15s infinite ease-in-out;
+	animation: left 3.15s infinite ease-in-out;
+}
+@-webkit-keyframes right {
+	0% {
+		-webkit-transform: translate(-130px);
+	}
+	50% {
+		-webkit-transform: translate(130px);
+	}
+	100% {
+		-webkit-transform: translate(-130px);
+	}
+}
+
+@-webkit-keyframes left {
+	0% {
+		-webkit-transform: translate(130px);
+	}
+	50% {
+		-webkit-transform: translate(-130px);
+	}
+	100% {
+		-webkit-transform: translate(130px);
+	}
+}
+
+@-moz-keyframes right {
+	0% {
+		-moz-transform: translate(-130px);
+	}
+	50% {
+		-moz-transform: translate(130px);
+	}
+	100% {
+		-moz-transform: translate(-130px);
+	}
+}
+
+@-moz-keyframes left {
+	0% {
+		-moz-transform: translate(130px);
+	}
+	50% {
+		-moz-transform: translate(-130px);
+	}
+	100% {
+		-moz-transform: translate(130px);
+	}
+}
+
+@keyframes right {
+	0% {
+		transform: translate(-130px);
+	}
+	50% {
+		transform: translate(130px);
+	}
+	100% {
+		transform: translate(-130px);
+	}
+}
+
+@keyframes left {
+	0% {
+		transform: translate(130px);
+	}
+	50% {
+		transform: translate(-130px);
+	}
+	100% {
+		transform: translate(130px);
+	}
+}
+
+.loading{
+  font-size:0;
+  width:30px;
+  height:30px;
+  margin-top:-58px;
+  margin-left:auto;
+  margin-right:auto;
+  border-radius:15px;
+  padding:0;
+  border:3px solid #70fc83;
+  border-bottom:3px solid #70fc83;
+  border-left:3px solid #70fc83;
+  background-color:transparent !important;
+  animation-name: rotateAnimation;
+  -webkit-animation-name: wk-rotateAnimation;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  animation-delay: 0.2s;
+  -webkit-animation-delay: 0.2s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  opacity: 0;
+}
+
+@keyframes rotateAnimation {
+    0%   {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+@-webkit-keyframes wk-rotateAnimation {
+    0%   {-webkit-transform: rotate(0deg);}
+    100% {-webkit-transform: rotate(360deg);}
 }

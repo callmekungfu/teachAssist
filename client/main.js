@@ -27,6 +27,9 @@ Template.hello.events({
 // LOGIN
 Template.login.events({
   'click .loginButton'(){
+    document.getElementById('errorMessage').style.opacity = "0";
+    document.getElementById('loginText').style.opacity = "0";
+    document.getElementById('loading').style.opacity = "1";
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
     //console.log(getParameterByName("username", 'https://ta.yrdsb.ca/gamma-live/index.php/login.jsp?username='+username+'&password='+password));
@@ -40,22 +43,24 @@ Template.login.events({
                 if ( error ) {
                   console.log( error );
                 } else {
-                  console.log( results);
                   htmlCode = results.content;
                   FlowRouter.go("/profile");
                   //document.getElementById("test").innerHTML = results.content;
                 }
               });
             }else{
-                console.log("error");
-                document.getElementById('errorMessage').innerHTML = "Login Unsuccessful"
+                document.getElementById('errorText').innerHTML = "Login Unsuccessful"
+                document.getElementById('loginText').style.opacity = "1";
+                document.getElementById('loading').style.opacity = "0";
                 document.getElementById('errorMessage').style.opacity = "1";
 
             }
           }
       });
     }else{
-      document.getElementById('errorMessage').innerHTML = "Connection Not Found";
+      document.getElementById('errorText').innerHTML = "Connection Not Found";
+      document.getElementById('loginText').style.opacity = "1";
+      document.getElementById('loading').style.opacity = "0";
       document.getElementById('errorMessage').style.opacity = "1";
     }
   }

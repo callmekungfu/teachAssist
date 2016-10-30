@@ -33,7 +33,7 @@
 <template name="login">
   <div class="errorMessage" id="errorMessage">
     <i class="fa fa-times-circle"></i>
-    Login Unsuccessful
+    <p class="errorText" id="errorText">warning</p>
   </div>
   <h1 class="main-title">Teach Assist App</h1>
   <h5 class="moto-title">Developed by Students for Students</h5>
@@ -55,8 +55,9 @@
     </form>
   </div>
 	<button class="loginButton">
-    <p class="loginText">Login</p>
+    <p class="loginText" id="loginText">Login</p>
   </button>
+  <div class="loading" id="loading"></div>
 </template>
 
 <template name="profile">
