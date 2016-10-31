@@ -40,9 +40,9 @@ Template.login.rendered = function() {
 // LOGIN
 Template.login.events({
   'click .loginButton'(){
-    document.getElementById('errorMessage').style.opacity = "0";
+    document.getElementById('errorMessage').style.opacity = "block";
     document.getElementById('loginText').style.opacity = "0";
-    document.getElementById('loading').style.opacity = "1";
+    document.getElementById('loading').style.display = "block";
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
     //console.log(getParameterByName("username", 'https://ta.yrdsb.ca/gamma-live/index.php/login.jsp?username='+username+'&password='+password));
