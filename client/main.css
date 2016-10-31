@@ -6,18 +6,17 @@
 
 /*Root Level Components*/
 body{
-    margin-top: -100px;
-    font-family: "Open Sans";
     font-family: 'Montserrat', sans-serif;
     text-align: center;
+    margin-top: -5%;
 }
-.container{
-    width:100%;
-    margin-top: 20px;
-    display:block;
-}
-.master{
-
+.login-template-container{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 /* Form Stylings*/
 form{
@@ -30,15 +29,16 @@ form{
 }
 input{
     font-size:18px;
-    padding:10px 10px 10px 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     display:block;
-    width:300px;
+    width:100%;
     border:none;
     border-bottom:1px solid #757575;
 }
-input:focus{
-    outline:none;
-}
+  input:focus{
+      outline:none;
+  }
 /* LABEL*/
 label{
     color:#999;
@@ -52,13 +52,12 @@ label{
     -moz-transition:0.2s ease all;
     -webkit-transition:0.2s ease all;
 }
-
-/* label active state */
-input:focus ~ label, input:valid ~ label{
-    top:-20px;
-    font-size:14px;
-    color:#5264AE;
-}
+  /* label active state */
+  input:focus ~ label, input:valid ~ label{
+      top:-20px;
+      font-size:14px;
+      color:#5264AE;
+  }
 
 /* BOTTOM BARS */
 .bar {
@@ -66,28 +65,27 @@ input:focus ~ label, input:valid ~ label{
     display:block;
     width:300px;
 }
-.bar:before, .bar:after {
-    content:'';
-    height:2px;
-    width:0;
-    bottom:1px;
-    position:absolute;
-    background:#5264AE;
-    transition:0.2s ease all;
-    -moz-transition:0.2s ease all;
-    -webkit-transition:0.2s ease all;
-}
-.bar:before {
-    left:50%;
-}
-.bar:after {
-    right:50%;
-}
-
-/* bar active state */
-input:focus ~ .bar:before, input:focus ~ .bar:after {
-    width:50%;
-}
+  .bar:before, .bar:after {
+      content:'';
+      height:2px;
+      width:0;
+      bottom:1px;
+      position:absolute;
+      background:#5264AE;
+      transition:0.2s ease all;
+      -moz-transition:0.2s ease all;
+      -webkit-transition:0.2s ease all;
+  }
+  .bar:before {
+      left:50%;
+  }
+  .bar:after {
+      right:50%;
+  }
+  /* bar active state */
+  input:focus ~ .bar:before, input:focus ~ .bar:after {
+      width:50%;
+  }
 
 /* HIGHLIGHTER */
 .highlight {
@@ -107,26 +105,6 @@ input:focus ~ .highlight {
     animation:inputHighlighter 0.3s ease;
 }
 
-/* ANIMATIONS */
-@-webkit-keyframes inputHighlighter {
-	from { background:#5264AE; }
-  to 	{ width:0; background:transparent; }
-}
-@-moz-keyframes inputHighlighter {
-	from { background:#5264AE; }
-  to 	{ width:0; background:transparent; }
-}
-@keyframes inputHighlighter {
-	from { background:#5264AE; }
-  to 	{ width:0; background:transparent; }
-}
-@keyframes effect{
-	100%{
-    opacity: 0;
-    transform: scale(2.5);
-  }
-}
-
 /* Text Components */
 .main-title{
 
@@ -143,30 +121,27 @@ input:focus ~ .highlight {
 /* Login Button */
 
 .loginButton{
-  border: 3px solid #70fc83;
+  border: 3px solid #5264AE;
   background: transparent;
   overflow: hidden;
   width:300px;
   outline: none;
-}
-
-.loginText{
-  font-family: 'Montserrat', sans-serif;
+  transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 1.5em;
-  color: #70fc83;
-
-  display: block;
-  user-select: none;
-  position: relative;
-  overflow: hidden;
-  padding: 0px;
-  opacity: 1;
-
+  color: #5264AE;
 }
+  .loginButton:hover{
+    cursor: pointer;
+    color: white;
+    background-color: #5264AE;
+  }
 
-/* Login Button */
+/* Logout Button */
 
 .logoutButton{
   border: 3px solid #fc7970;
@@ -221,6 +196,31 @@ input:focus ~ .highlight {
 	-moz-animation: left 3.15s infinite ease-in-out;
 	animation: left 3.15s infinite ease-in-out;
 }
+
+.loading{
+  font-size:0;
+  width:30px;
+  height:30px;
+  margin-top:-58px;
+  margin-left:auto;
+  margin-right:auto;
+  border-radius:15px;
+  padding:0;
+  border:3px solid #fff;
+  border-bottom:3px solid #fff;
+  border-left:3px solid #fff;
+  background-color:transparent !important;
+  animation-name: rotateAnimation;
+  -webkit-animation-name: wk-rotateAnimation;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  animation-delay: 0.2s;
+  -webkit-animation-delay: 0.2s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  opacity: 0;
+}
+
 @-webkit-keyframes right {
 	0% {
 		-webkit-transform: translate(-130px);
@@ -293,29 +293,7 @@ input:focus ~ .highlight {
 	}
 }
 
-.loading{
-  font-size:0;
-  width:30px;
-  height:30px;
-  margin-top:-58px;
-  margin-left:auto;
-  margin-right:auto;
-  border-radius:15px;
-  padding:0;
-  border:3px solid #70fc83;
-  border-bottom:3px solid #70fc83;
-  border-left:3px solid #70fc83;
-  background-color:transparent !important;
-  animation-name: rotateAnimation;
-  -webkit-animation-name: wk-rotateAnimation;
-  animation-duration: 1s;
-  -webkit-animation-duration: 1s;
-  animation-delay: 0.2s;
-  -webkit-animation-delay: 0.2s;
-  animation-iteration-count: infinite;
-  -webkit-animation-iteration-count: infinite;
-  opacity: 0;
-}
+
 
 @keyframes rotateAnimation {
     0%   {transform: rotate(0deg);}
@@ -324,4 +302,31 @@ input:focus ~ .highlight {
 @-webkit-keyframes wk-rotateAnimation {
     0%   {-webkit-transform: rotate(0deg);}
     100% {-webkit-transform: rotate(360deg);}
+}
+
+
+/* ANIMATIONS */
+@-webkit-keyframes inputHighlighter {
+  from { background:#5264AE; }
+  to  { width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+  from { background:#5264AE; }
+  to  { width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+  from { background:#5264AE; }
+  to  { width:0; background:transparent; }
+}
+@keyframes effect{
+  100%{
+    opacity: 0;
+    transform: scale(2.5);
+  }
+}
+
+
+/* Useful Classes */
+.center {
+    margin: auto;
 }

@@ -4,10 +4,7 @@
 </head>
 
 <body>
-  <div class="master">
-    <canvas id="background"></canvas>
     {{> applicationLayout}}
-  </div>
 </body>
 
 
@@ -31,33 +28,37 @@
 </template>
 
 <template name="login">
-  <div class="errorMessage" id="errorMessage">
-    <i class="fa fa-times-circle"></i>
-    <p class="errorText" id="errorText">warning</p>
-  </div>
-  <h1 class="main-title">Teach Assist App</h1>
-  <h5 class="moto-title">Developed by Students for Students</h5>
-  <h2 class="sub-title">Welcome!</h2>
-  <div class="container">
-    <form>
-      <div class="group">
-        <input type="text" id="username" required>
-        <span class="highlight"></span>
-        <span class="bar"></span>
-        <label>Student Number</label>
+  <div class="login-template-container">
+    <div class="container">
+      <div class="errorMessage" id="errorMessage">
+        <i class="fa fa-times-circle"></i>
+        <p class="errorText" id="errorText">warning</p>
       </div>
-      <div class="group">
-        <input type="password" id="password" required>
-        <span class="highlight"></span>
-        <span class="bar"></span>
-        <label>Password</label>
+      <h1 class="main-title">Teach Assist App</h1>
+      <h5 class="moto-title">Developed by Students for Students</h5>
+      <h2 class="sub-title" id="greeting">Welcome!</h2>
+      
+        <form>
+          <div class="group">
+            <input type="text" id="username" required>
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Student Number</label>
+          </div>
+          <div class="group">
+            <input type="password" id="password" required>
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Password</label>
+          </div>
+        </form>
+      
+      <div class="loginButton center">
+        <p class="loginText" id="loginText">Login</p>
       </div>
-    </form>
+      <div class="loading" id="loading"></div>
+    </div>
   </div>
-	<button class="loginButton">
-    <p class="loginText" id="loginText">Login</p>
-  </button>
-  <div class="loading" id="loading"></div>
 </template>
 
 <template name="profile">

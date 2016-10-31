@@ -7,7 +7,7 @@ var htmlCode;
 
 Template.hello.onCreated(function helloOnCreated() {
   // counter starts at 0
-  this.counter = new ReactiveVar(0);
+
 });
 
 Template.hello.helpers({
@@ -23,6 +23,19 @@ Template.hello.events({
   },
 });
 
+Template.login.rendered = function() {
+  this.counter = new ReactiveVar(0);
+  var d = new Date();
+  var greetings = ["Good Morning!", "Good Afternoon!", "Good Evening!"];
+  var h = d.getHours();
+  var state;
+  if(h < 12 && h > 0){
+    state = 0;
+  }else if(h<18 && h > 11){
+    state = 1;
+  }else state = 2;
+  document.getElementById("greeting").innerHTML = greetings[state];
+}
 
 // LOGIN
 Template.login.events({
