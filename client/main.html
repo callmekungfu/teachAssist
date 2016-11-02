@@ -12,11 +12,6 @@
   {{> Template.dynamic template=main}}
 </template>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
-</template>
-
 <template name="info">
   <h2>Learn Meteor!</h2>
   <ul>
@@ -61,6 +56,38 @@
   </div>
 </template>
 
+<template name="overview">
+    <!-- Navigation -->
+  <div id="mySidenav" class="sidenav darkbg">
+    <div class="user-img" style="background-image: url('http://placehold.it/350x150')"></div>
+    <h3 class="user-name mb-30">Yonglin Wang</h3>
+    <a href="#">Courses</a>
+    <a href="#">News</a>
+    <a href="#">Clients</a>
+  </div>
+
+  
+  <div class="main" id="main">
+    <a href="javascript:void(0)" class="menu-toggle" id="menuToggle" style="font-size: 2em;">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    </a>
+    <section class="courses">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 col-md-offset-1 course text-center">
+            <div class="user-img mt-20" style="background-image: url('http://placehold.it/350x150')"></div>
+            <h2>Hello</h2>
+          </div>
+          <div class="col-md-5 col-md-offset-1 course text-center">
+            <div class="user-img mt-20" style="background-image: url('http://placehold.it/350x150')"></div>
+            <h2>Hello</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</template>
+
 <template name="profile">
   <h1 class="main-title" id="test">Profile</h1>
   <p id="htmlCode"></p>
@@ -68,3 +95,4 @@
     <p class="logoutText">Logout</p>
   </button>
 </template>
+

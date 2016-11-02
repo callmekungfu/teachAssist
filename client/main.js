@@ -4,25 +4,7 @@ import { ReactiveVar } from 'meteor/reactive-var';
 import './main.html';
 
 var htmlCode;
-
-Template.hello.onCreated(function helloOnCreated() {
-  // counter starts at 0
-
-});
-
-Template.hello.helpers({
-  counter() {
-    return Template.instance().counter.get();
-  },
-});
-
-Template.hello.events({
-  'click button'(event, instance) {
-    // increment the counter when button is clicked
-    instance.counter.set(instance.counter.get() + 1);
-  },
-});
-
+var sidebar = false;
 Template.login.rendered = function() {
   this.counter = new ReactiveVar(0);
   var d = new Date();
@@ -45,7 +27,7 @@ Template.login.events({
     document.getElementById('loading').style.display = "block";
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
-    //console.log(getParameterByName("username", 'https://ta.yrdsb.ca/gamma-live/index.php/login.jsp?username='+username+'&password='+password));
+
     if(Meteor.status().connected){
       Meteor.call("fetchLink",username, password, function(error, results) {
           if ( error ) {
@@ -57,8 +39,7 @@ Template.login.events({
                   console.log( error );
                 } else {
                   htmlCode = results.content;
-                  FlowRouter.go("/profile");
-                  //document.getElementById("test").innerHTML = results.content;
+                  FlowRouter.go("/overview");
                 }
               });
             }else{
@@ -80,7 +61,6 @@ Template.login.events({
 });
 
 // PROFILE
-
 Template.profile.onRendered(function helloOnCreated() {
   document.getElementById("htmlCode").innerHTML = htmlCode;
 });
@@ -89,4 +69,22 @@ Template.profile.events({
   'click .logoutButton'() {
     FlowRouter.go("/");
   },
+});
+
+// Overview
+Template.overview.events({
+  'click #menuToggle'(){
+    if(!sidebar){
+      document.getElementById("mySidenav").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+      document.body.style.backgroundColor = "rgba(0,0,0,0.6)";
+      sidebar = true;
+    }else{
+      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("main").style.marginLeft = "0";
+      document.body.style.backgroundColor = "#e3e3e3";
+      sidebar = false;
+    }
+
+  }
 });
