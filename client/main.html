@@ -4,20 +4,12 @@
 </head>
 
 <body>
-  <div class="master">
-    <canvas id="background"></canvas>
     {{> applicationLayout}}
-  </div>
 </body>
 
 
 <template name="applicationLayout">
   {{> Template.dynamic template=main}}
-</template>
-
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
 </template>
 
 <template name="info">
@@ -31,33 +23,69 @@
 </template>
 
 <template name="login">
-  <div class="errorMessage" id="errorMessage">
-    <i class="fa fa-times-circle"></i>
-    <p class="errorText" id="errorText">warning</p>
-  </div>
-  <h1 class="main-title">Teach Assist App</h1>
-  <h5 class="moto-title">Developed by Students for Students</h5>
-  <h2 class="sub-title">Welcome!</h2>
-  <div class="container">
-    <form>
-      <div class="group">
-        <input type="text" id="username" required>
-        <span class="highlight"></span>
-        <span class="bar"></span>
-        <label>Student Number</label>
+  <div class="login-template-container">
+    <div class="container">
+      <div class="errorMessage" id="errorMessage">
+        <i class="fa fa-times-circle"></i>
+        <p class="errorText" id="errorText">warning</p>
       </div>
-      <div class="group">
-        <input type="password" id="password" required>
-        <span class="highlight"></span>
-        <span class="bar"></span>
-        <label>Password</label>
+      <h5 class="moto-title">Learn Assist - From Students. For Students.</h5>
+      <h1 class="main-title">Login Now</h1>
+      <!-- <h3 class="sub-title" id="greeting">Welcome!</h3> We should put this as a splash screen later on-->
+      
+        <form class="mt-30">
+          <div class="group">
+            <input type="text" id="username" required>
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Student Number</label>
+          </div>
+          <div class="group">
+            <input type="password" id="password" required>
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Password</label>
+          </div>
+        </form>
+      
+      <div class="loginButton center">
+        <p class="login-text" id="loginText">Login</p>
       </div>
-    </form>
+      <div class="loading" id="loading"></div>
+    </div>
   </div>
-	<button class="loginButton">
-    <p class="loginText" id="loginText">Login</p>
-  </button>
-  <div class="loading" id="loading"></div>
+</template>
+
+<template name="overview">
+    <!-- Navigation -->
+  <div id="mySidenav" class="sidenav darkbg">
+    <div class="user-img" style="background-image: url('http://placehold.it/350x150')"></div>
+    <h3 class="user-name mb-30">Yonglin Wang</h3>
+    <a href="#">Courses</a>
+    <a href="#">News</a>
+    <a href="#">Clients</a>
+  </div>
+
+  
+  <div class="main" id="main">
+    <a href="javascript:void(0)" class="menu-toggle" id="menuToggle" style="font-size: 2em;">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    </a>
+    <section class="courses">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 col-md-offset-1 course text-center">
+            <div class="user-img mt-20" style="background-image: url('http://placehold.it/350x150')"></div>
+            <h2>Hello</h2>
+          </div>
+          <div class="col-md-5 col-md-offset-1 course text-center">
+            <div class="user-img mt-20" style="background-image: url('http://placehold.it/350x150')"></div>
+            <h2>Hello</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </template>
 
 <template name="profile">
@@ -67,3 +95,4 @@
     <p class="logoutText">Logout</p>
   </button>
 </template>
+
