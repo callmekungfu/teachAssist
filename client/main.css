@@ -1,6 +1,6 @@
 /* CSS declarations go here */
 /* Fonts */
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,400italic);
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,400italic');
 @import url('http://fonts.googleapis.com/css?family=Montserrat:700');
 @import url('//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
 
@@ -26,10 +26,14 @@ body{
   -moz-animation: bg-gradient 21s ease infinite;
   animation: bg-gradient 21s ease infinite;
 }
-.container{
+.login{
   height: 700px; /* Temporary Solution */
 }
-
+.navbar{
+  z-index: 99;
+  background-color: rgba(0,0,0,0);
+  border:none;
+}
 /* Form Stylings*/
 form{
     display: inline-block;
@@ -38,6 +42,9 @@ form{
 .group{
     position:relative;
     margin-bottom:40px;
+}
+section{
+  margin-top: 8%;
 }
 input{
   color: #fff;
@@ -237,6 +244,97 @@ input:focus ~ .highlight {
   animation-iteration-count: infinite;
   -webkit-animation-iteration-count: infinite;
   display: none;
+}
+
+/* Side Navigation */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 999; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  background: linear-gradient(157deg, #35ae8f, #ba39ea);
+  background-size: 400% 400%;
+
+  -webkit-animation: bg-gradient 21s ease infinite;
+  -moz-animation: bg-gradient 21s ease infinite;
+  animation: bg-gradient 21s ease infinite;
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 8px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #fff;
+    display: block;
+    transition: 0.3s
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+    color: #000;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+.main {
+  background-color: #e3e3e3;
+  transition: margin-left .5s;
+  text-align: left;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+.menu-toggle{
+  margin-left: 2%;
+  margin-top: 1%;
+  position: fixed;
+  color: #111 !important;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+  .menu-toggle:hover{
+    cursor: pointer;
+    color: #000 !important;
+  }
+.user-img {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.user-name{
+  color: #fff;
+}
+
+.course{
+  background-color: #fff;
+
 }
 
 /* 
