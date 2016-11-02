@@ -22,9 +22,8 @@ Template.login.rendered = function() {
 // LOGIN
 Template.login.events({
   'click .loginButton'(){
-    document.getElementById('errorMessage').style.opacity = "block";
+    document.getElementById('errorMessage').style.display = "none";
     document.getElementById('loginText').style.opacity = "0";
-    document.getElementById('loading').style.display = "block";
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
 
@@ -43,10 +42,10 @@ Template.login.events({
                 }
               });
             }else{
-                document.getElementById('errorText').innerHTML = "Login Unsuccessful"
+                document.getElementById('errorText').innerHTML = "Password does not match"
                 document.getElementById('loginText').style.opacity = "1";
-                document.getElementById('loading').style.opacity = "0";
-                document.getElementById('errorMessage').style.opacity = "1";
+                document.getElementById('loading').style.dispaly = "none";
+                document.getElementById('errorMessage').style.display = "block";
 
             }
           }
@@ -54,8 +53,7 @@ Template.login.events({
     }else{
       document.getElementById('errorText').innerHTML = "Connection Not Found";
       document.getElementById('loginText').style.opacity = "1";
-      document.getElementById('loading').style.opacity = "0";
-      document.getElementById('errorMessage').style.opacity = "1";
+      document.getElementById('errorMessage').style.display = "block";
     }
   }
 });
@@ -68,7 +66,7 @@ Template.profile.onRendered(function helloOnCreated() {
 Template.profile.events({
   'click .logoutButton'() {
     FlowRouter.go("/");
-  },
+  }
 });
 
 // Overview
